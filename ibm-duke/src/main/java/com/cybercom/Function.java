@@ -1,0 +1,20 @@
+package com.cybercom;
+
+import com.google.gson.JsonObject;
+
+/**
+ * Azure Functions with HTTP Trigger.
+ */
+public class Function {
+
+    public static JsonObject main(JsonObject args) {
+
+        String name = "stranger";
+        if (args.has("name"))
+            name = args.getAsJsonPrimitive("name").getAsString();
+        JsonObject response = new JsonObject();
+        response.addProperty("greeting", "Hello " + name + "!");
+
+        return response;
+    }
+}
