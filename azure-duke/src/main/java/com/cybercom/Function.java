@@ -1,8 +1,13 @@
 package com.cybercom;
 
-import java.util.*;
-import com.microsoft.azure.serverless.functions.annotation.*;
-import com.microsoft.azure.serverless.functions.*;
+import com.microsoft.azure.serverless.functions.ExecutionContext;
+import com.microsoft.azure.serverless.functions.HttpRequestMessage;
+import com.microsoft.azure.serverless.functions.HttpResponseMessage;
+import com.microsoft.azure.serverless.functions.annotation.AuthorizationLevel;
+import com.microsoft.azure.serverless.functions.annotation.FunctionName;
+import com.microsoft.azure.serverless.functions.annotation.HttpTrigger;
+
+import java.util.Optional;
 
 /**
  * Azure Functions with HTTP Trigger.
@@ -15,8 +20,12 @@ public class Function {
      */
     @FunctionName("hello")
     public HttpResponseMessage<String> hello(
-            @HttpTrigger(name = "req", methods = {"get", "post"}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
+            @HttpTrigger(name = "req",
+                    methods = {"get", "post"},
+                    authLevel = AuthorizationLevel.ANONYMOUS)
+                    HttpRequestMessage<Optional<String>> request,
             final ExecutionContext context) {
+
         context.getLogger().info("Java HTTP trigger processed a request.");
 
         // Parse query parameter
