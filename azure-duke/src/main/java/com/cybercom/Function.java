@@ -20,6 +20,7 @@ public class Function {
      */
     @FunctionName("hello")
     public HttpResponseMessage<String> hello(
+
             @HttpTrigger(name = "req",
                     methods = {"get", "post"},
                     authLevel = AuthorizationLevel.ANONYMOUS)
