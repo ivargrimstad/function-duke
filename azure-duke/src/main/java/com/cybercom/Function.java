@@ -1,11 +1,12 @@
 package com.cybercom;
 
-import com.microsoft.azure.serverless.functions.ExecutionContext;
-import com.microsoft.azure.serverless.functions.HttpRequestMessage;
-import com.microsoft.azure.serverless.functions.HttpResponseMessage;
-import com.microsoft.azure.serverless.functions.annotation.AuthorizationLevel;
-import com.microsoft.azure.serverless.functions.annotation.FunctionName;
-import com.microsoft.azure.serverless.functions.annotation.HttpTrigger;
+
+import com.microsoft.azure.functions.ExecutionContext;
+import com.microsoft.azure.functions.HttpRequestMessage;
+import com.microsoft.azure.functions.HttpResponseMessage;
+import com.microsoft.azure.functions.annotation.AuthorizationLevel;
+import com.microsoft.azure.functions.annotation.FunctionName;
+import com.microsoft.azure.functions.annotation.HttpTrigger;
 
 import java.util.Optional;
 
