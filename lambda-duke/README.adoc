@@ -1,0 +1,13 @@
+= Instructions
+
+ mvn clean package
+
+. Log in to AWS Console and create function.
+. Upload JAR
+. Set up Test using:
+
+ {
+     "name": "Duke"
+ }
+
+ . Test function
