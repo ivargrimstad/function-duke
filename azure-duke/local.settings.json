@@ -1,7 +1,8 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=functiondukeaed8;AccountKey=r0Qe57KCn3a1SWHHGcsQAC805kpykr72XVPY28fJHFgPVEY5FIJcDtQbTjzLC2uPozKjG2ba9gr11JeoIGVblQ==",
-    "AzureWebJobsDashboard": "UseDevelopmentStorage=true"
+    "AzureWebJobsStorage": "",
+    "AzureWebJobsDashboard": "",
+    "FUNCTIONS_WORKER_RUNTIME": "java"
   }
 }
