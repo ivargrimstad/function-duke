@@ -1,0 +1,13 @@
+= Instructions
+
+In another terminal
+
+ fn start
+
+In project
+
+ mvn clean package
+
+ fn build
+
+ fn deploy --app fn-duke --local

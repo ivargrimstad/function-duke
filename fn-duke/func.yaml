@@ -1,7 +1,12 @@
-name: ivargrimstad/fn-duke
-version: 0.0.6
+schema_version: 20180708
+name: fn-duke
+version: 0.0.3
 runtime: java
+build_image: fnproject/fn-java-fdk-build:jdk9-1.0.75
+run_image: fnproject/fn-java-fdk:jdk9-1.0.75
 cmd: eu.agilejava.fn.HelloFunction::handleRequest
-build_image: fnproject/fn-java-fdk-build:jdk9-1.0.59
-run_image: fnproject/fn-java-fdk:jdk9-1.0.59
-format: http
+format: http-stream
+triggers:
+- name: fn-duke-trigger
+  type: http
+  source: /fn-duke-trigger
