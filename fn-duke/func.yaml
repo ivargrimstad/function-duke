@@ -1,5 +1,5 @@
 name: ivargrimstad/fn-duke
-version: 0.0.3
+version: 0.0.6
 runtime: java
 cmd: eu.agilejava.fn.HelloFunction::handleRequest
 build_image: fnproject/fn-java-fdk-build:jdk9-1.0.59
