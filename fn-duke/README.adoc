@@ -11,3 +11,10 @@ In project
  fn build
 
  fn deploy --app fn-duke --local
+
+ curl -H "Content-Type: application/json" -d "Duke" http://localhost:8080/t/fn-duke/fn-duke-trigger
+
+Deploy to Oracle Cloud
+
+ export FN_API_URL=130.162.115.189:8080
+ fn deploy --app fn-duke
