@@ -4,9 +4,9 @@ public class HelloFunction {
 
     public String handleRequest(String input) {
 
-        String place = System.getenv("place");
+        String configuredName = System.getenv("name");
 
-        String name = (input == null || input.isEmpty()) ? place  : input;
+        String name = (input == null || input.isEmpty()) ? configuredName  : input;
 
         return "Hello, " + name + "\n";
     }
