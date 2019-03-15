@@ -12,19 +12,38 @@ In project
 
  fn deploy --app fn-duke --local
 
+ fn invoke fn-duke fn-duke
+
  curl -H "Content-Type: application/json" -d "Duke" http://localhost:8080/t/fn-duke/fn-duke-trigger
 
-Deploy to Oracle Cloud
+== Oracle Cloud
 
- export FN_API_URL=130.162.115.189:8080
- fn deploy --app fn-duke
+*NOTE:* These instructions are mostly for reminding me during talks.
+You will need to set up your own Oracle Cloud account and enviroment in order to be able to replicate.
 
- curl -H "Content-Type: application/json" -d "Duke" http://130.162.115.189:8080/t/fn-duke/fn-duke-trigger
+=== Set up the environment
 
-Deploy to Oracle Cloud Kubernetes Cluster
+==== Fn Context
+ fn use context oci-curl
 
- kubectl get svc --namespace default -w duke-fn-fn-api
+==== Login to Docker
+ docker login phx.ocir.io
+ Username: ivar/ivar.oracle.cloud@agilejava.eu
+ Password: <paste token here>
 
- export FN_API_URL=http://$(kubectl get svc --namespace default duke-fn-fn-api -o jsonpath='{.status.loadBalancer.ingress[0].ip}'):80
+==== Configure oci-curl
+ source ~/oci-curl/oci-curl.sh
 
- fn deploy --app fn-duke
+=== Invoke Function
+==== fn-cli
+ fn invoke FunctionDuke fn-duke
+
+==== oci-curl
+ oci-curl x3vzdahhy3a.us-phoenix-1.functions.oci.oraclecloud.com GET "/t/fn-duke-trigger"
+
+==== Java
+
+In the fn-java-sdk-invoke project
+
+ source env.settings
+ java -jar target/fn-java-sdk-invoke-1.0-SNAPSHOT.jar FunctionCompartment FunctionDuke fn-duke
