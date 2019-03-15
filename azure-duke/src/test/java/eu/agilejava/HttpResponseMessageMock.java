@@ -36,7 +36,6 @@ public class HttpResponseMessageMock implements HttpResponseMessage {
         private Map<String, String> headers;
         private Object body;
 
-        @Override
         public HttpResponseMessage.Builder status(HttpStatus status) {
             this.status = status;
             return this;
@@ -54,6 +53,11 @@ public class HttpResponseMessageMock implements HttpResponseMessage {
         @Override
         public HttpResponseMessage build() {
             return new HttpResponseMessageMock(this.status, this.headers, this.body);
+        }
+
+        @Override
+        public Builder status(HttpStatusType httpStatusType) {
+            return null;
         }
     }
 }
