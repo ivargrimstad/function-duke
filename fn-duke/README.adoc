@@ -47,3 +47,10 @@ In the fn-java-sdk-invoke project
 
  source env.settings
  java -jar target/fn-java-sdk-invoke-1.0-SNAPSHOT.jar FunctionCompartment FunctionDuke fn-duke
+
+=== Configure Function
+==== Set Configuration
+ fn config function FunctionDuke fn-duke name World
+
+==== Delete Configuration
+ fn unset config function FunctionDuke fn-duke name
