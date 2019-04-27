@@ -14,6 +14,8 @@ In project
 
  fn invoke fn-duke fn-duke
 
+ http :8080/t/fn-duke/fn-duke-trigger
+
  curl -H "Content-Type: application/json" -d "Duke" http://localhost:8080/t/fn-duke/fn-duke-trigger
 
 == Oracle Cloud
@@ -24,7 +26,9 @@ You will need to set up your own Oracle Cloud account and enviroment in order to
 === Set up the environment
 
 ==== Fn Context
- fn use context oci-curl
+ fn use context fn-oci
+
+ export FN_REGISTRY=phx.ocir.io/ivar/functiondemo
 
 ==== Login to Docker
  docker login phx.ocir.io
@@ -33,6 +37,10 @@ You will need to set up your own Oracle Cloud account and enviroment in order to
 
 ==== Configure oci-curl
  source ~/oci-curl/oci-curl.sh
+
+=== Deploy Function
+
+ fn deploy --app FunctionDuke
 
 === Invoke Function
 ==== fn-cli
