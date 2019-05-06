@@ -11,6 +11,6 @@ public class Hello implements RequestHandler<Person, String> {
         LambdaLogger logger = context.getLogger();
         logger.log("received : " + person.getName());
 
-        return String.valueOf("Hello, " + person.getName());
+        return "Hello, " + person.getName();
     }
 }

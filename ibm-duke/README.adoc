@@ -2,6 +2,6 @@
 
  mvn clean package
 
- ibmcloud fn action create helloJava target/ibm-function-duke-1.0-SNAPSHOT.jar --main eu.agilejava.Hello
+ ibmcloud fn action create helloJava target/ibm-function-duke-1.0-SNAPSHOT-shaded.jar --main eu.agilejava.Hello
 
  ibmcloud fn action invoke --result helloJava --param name World
