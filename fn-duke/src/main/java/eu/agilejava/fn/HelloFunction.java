@@ -8,7 +8,7 @@ public class HelloFunction {
 
         String name = (input == null || input.isEmpty()) ? configuredName  : input;
 
-        return "Hello, " + name + "\n";
+        return "Hi, " + name + "\n";
     }
 
 }
