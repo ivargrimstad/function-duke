@@ -31,3 +31,6 @@ hs_err_pid*
 
 fn.db
 fn.mq
+
+template
+build
