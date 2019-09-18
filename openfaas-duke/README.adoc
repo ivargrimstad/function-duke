@@ -1,0 +1,12 @@
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-693znsfr8dnnwf6p14od9szjk649h3cua4k5u4wtu82o9vu6m9-5ldn426e72j8sc095aomqyt75 192.168.65.3:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+[Credentials]
+username: admin
+password: f37e7e1d1fe152d5a3e21b2a7c244a8a07c5fe772ea679fca051d5e6e54d500f
+echo -n f37e7e1d1fe152d5a3e21b2a7c244a8a07c5fe772ea679fca051d5e6e54d500f | faas-cli login --username=admin --password-stdin
+
+
