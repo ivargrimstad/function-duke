@@ -1,3 +1,24 @@
+
+### Build
+
+ faas-cli build -f openfaas-duke.yml
+
+### Push
+
+ faas-cli push -f openfaas-duke.yml
+
+### Start environment
+
+ docker swarm init
+ docker swarm join ...
+ [FAAS_HOME]/deploy_stack.sh
+ faas-cli login
+
+### Deploy
+
+ faas-cli deploy -f openfaas-duke.yml
+
+
 To add a worker to this swarm, run the following command:
 
     docker swarm join --token SWMTKN-1-693znsfr8dnnwf6p14od9szjk649h3cua4k5u4wtu82o9vu6m9-5ldn426e72j8sc095aomqyt75 192.168.65.3:2377
